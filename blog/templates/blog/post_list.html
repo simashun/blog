@@ -1,7 +1,28 @@
 <html>
 <body>
 	<hr>
-	<h1>Hi, Folks!</h1><br>
-	<h1>ようこそ</h1><br>
+	<p>Hi, Folks!</p><br>
+	<p>ようこそ</p><br>
+	<hr>
+	<div>
+		{{ posts }}
+		<hr>
+		<hr>
+		{% for post in posts %}
+		<p>
+		{{ post.title}}
+		</p>
+		<pre>
+		{{ post.text|linebreaksbr}}
+		</pre>
+		<h5>
+			作成日:
+		{{ post.published_date }}
+		</h5>
+		<hr noshade>
+
+		{% endfor %}
+
+	</div>
 </body>
 </html>
