@@ -1,28 +1,19 @@
-<html>
-<body>
-	<hr>
-	<p>Hi, Folks!</p><br>
-	<p>ようこそ</p><br>
-	<hr>
+{% extends 'blog/base.html' %}
+
+{% block content %}
+	{% for post in posts %}
 	<div>
-		{{ posts }}
-		<hr>
-		<hr>
-		{% for post in posts %}
-		<p>
+		<h2><a href=''>
 		{{ post.title}}
-		</p>
-		<pre>
+			</a></h2>
+		<p>
 		{{ post.text|linebreaksbr}}
-		</pre>
+		</p>
 		<h5>
 			作成日:
 		{{ post.published_date }}
 		</h5>
-		<hr noshade>
-
-		{% endfor %}
-
 	</div>
-</body>
-</html>
+	<hr noshade>
+	{% endfor %}
+{% endblock %}
